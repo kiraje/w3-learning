@@ -16,6 +16,21 @@
 .row {
   margin: 0 -15px;
 }
+.clear {
+  clear: both;
+}
+.letter-spacing {
+  letter-spacing: 2px;
+}
+.text-center {
+  text-align: center;
+}
+.text-justify {
+  text-align: justify;
+}
+.text-white {
+  color: white;
+}
 .header {
   background-color: #000;
   height: 46px;
@@ -23,7 +38,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 999;
+  z-index: 998;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 .nav {
@@ -62,6 +77,7 @@
   display: block;
   position: relative;
   min-width: 160px;
+  background-color: white;
 }
 .sub-nav a {
   color: #000;
@@ -109,4 +125,258 @@
   padding: 10px 0;
   font-weight: 500;
   letter-spacing: 1px;
+}
+.band-section,
+.tour-section,
+.contact-section {
+  padding: 64px 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.content-heading,
+.content-subheading,
+.content-description {
+  margin: 15px 0;
+  font-weight: 500;
+}
+.content-subheading {
+  opacity: 0.6;
+  font-style: italic;
+}
+.member-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px 0;
+  text-align: center;
+}
+.member-name {
+  padding: 15px 0;
+}
+.member-items {
+  margin: 0 auto;
+}
+.member-img {
+  width: 154px;
+  border-radius: 4px;
+}
+.member-img:hover {
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+.tour-content {
+  background: black;
+}
+.ticket-status li {
+  background: white;
+  border-bottom: 1px solid #ccc;
+  padding: 8px 16px;
+}
+.ticket-available {
+  margin-left: 16px;
+  background: red;
+  padding: 1px 2px;
+  color: white;
+}
+.ticket-quantity {
+  display: inline-block;
+  padding: 0 8px;
+  float: right;
+  margin-right: 16px;
+  background-color: #000;
+  color: white;
+  border-radius: 50%;
+}
+.place-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px 0;
+}
+.place-items {
+  display: block;
+  padding: 0 8px;
+}
+.place-info {
+  display: block;
+  padding: 0 16px;
+  background-color: #fff;
+}
+.place-img {
+  display: block;
+  width: 100%;
+  border-radius: 2px;
+}
+.place-name {
+  font-size: 18px;
+  font-weight: 500;
+  padding-top: 15px;
+}
+.place-date,
+.place-detail {
+  margin: 15px 0;
+  font-weight: 300;
+}
+.place-date {
+  color: #ccc;
+}
+.ticket-btn {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #000;
+  color: white;
+  border-radius: 2px;
+  text-align: center;
+  margin: 15px 0;
+}
+.ticket-btn:hover {
+  color: black;
+  background-color: #ccc;
+  transition: all 0.3s ease;
+}
+.contact-section {
+  background: white;
+}
+.contact-smt {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  padding: 32px 0;
+}
+.contact-detail {
+  margin-top: 8px;
+}
+.contact-detail span {
+  font-weight: 400;
+}
+.contact-text {
+  padding: 0 16px;
+}
+.contact-form .contact-input {
+  display: block;
+}
+.contact-fill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.contact-fill > input {
+  width: 48%;
+}
+.contact-input {
+  width: 100%;
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  margin: 8px 0;
+}
+.contact-input:focus {
+  outline: none;
+  border: 1px solid #000;
+}
+.contact-submit {
+  display: inline-block;
+  float: right;
+  padding: 8px 16px;
+  background-color: #000;
+  color: white;
+  border-radius: 2px;
+  text-align: center;
+  margin: 15px 0;
+}
+.footer {
+  padding: 64px 0;
+}
+.footer-img {
+  width: 100%;
+  height: auto;
+}
+.footer-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 30px;
+}
+.footer-social .social-icon {
+  padding: 10px 4px;
+  color: #292929f6;
+  font-size: 24px;
+}
+.footer-social .social-icon:hover {
+  color: #ccc;
+}
+.footer-content p {
+  text-align: center;
+}
+.modal {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  align-items: start;
+  justify-content: center;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  padding-top: 100px;
+}
+.modal-content {
+  width: 100%;
+  max-width: 900px;
+  background-color: #fff;
+  border-radius: 4px;
+  display: block;
+  justify-content: center;
+  position: relative;
+}
+.modal-header {
+  display: block;
+  padding: 32px 16px;
+  background-color: #009688 !important;
+  text-align: center;
+}
+.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 8px 16px;
+  font-size: 24px;
+  color: black;
+  cursor: pointer;
+  display: block;
+}
+.close:hover {
+  background: #ccc;
+}
+.modal-body {
+  padding: 0 16px;
+}
+.modal-body input {
+  width: 100%;
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  margin: 8px 0;
+}
+.modal-body p {
+  margin-top: 15px;
+}
+.modal-btn {
+  display: block;
+  padding: 16px;
+  background-color: #009688 !important;
+  color: white;
+  border-radius: 2px;
+  text-align: center;
+  margin: 16px 0;
+}
+.modal-btn:hover {
+  background-color: #ccc !important;
+  transition: all 0.3s ease;
+}
+.modal-footer {
+  float: right;
+  margin-bottom: 30px;
+  margin-right: 12px;
 }
