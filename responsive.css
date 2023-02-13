@@ -1,18 +1,78 @@
 /* PC */
-@media (min-width: 768px) {
-  .mobile-menu {
+@media (min-width: 991px) {
+  .menu-mobile-btn {
     display: none;
   }
 }
 /* Tablet */
 @media (min-width: 768px) and (max-width: 991px) {
-  .mobile-menu {
+  .menu-mobile-btn {
     display: none;
+  }
+  .footer-social .social-icon {
+    padding: 25px 20px;
   }
 }
 /* Mobile */
 @media (max-width: 767px) {
+  .header {
+    overflow: hidden;
+  }
   .nav > li {
     display: block;
+  }
+  .nav-items:first-child {
+    display: inline-block;
+  }
+  .nav {
+    display: block;
+  }
+  .search-btn {
+    display: none;
+  }
+  .subnav {
+    position: initial;
+  }
+  .subnav li {
+    background: #000;
+  }
+  .subnav a {
+    color: #fff;
+  }
+  .slider-text {
+    display: none;
+  }
+  .member-list {
+    display: initial;
+  }
+  .member-img {
+    width: initial;
+  }
+  .place-list {
+    display: block;
+  }
+  .place-items {
+    padding: 10px 8px;
+  }
+  .contact-smt {
+    display: block;
+  }
+  .contact-fill {
+    display: block;
+  }
+  .contact-fill input {
+    width: 100%;
+  }
+  .contact-submit {
+    width: 100%;
+  }
+  .ticket-btn {
+    width: 100%;
+  }
+  .modal-content {
+    width: 88%;
+  }
+  form.contact-form {
+    padding-top: 22px;
   }
 }

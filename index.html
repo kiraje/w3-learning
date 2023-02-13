@@ -15,24 +15,28 @@
         <div class="main">
           <div class="header">
             <ul class="nav">
-              <li><a href="#">Home</a></li>
-              <li><a href="#band">Band</a></li>
-              <li><a href="#tour">Tour</a></li>
-              <li><a href="#contact">Contact</a></li>
-              <li>
+              <li class="nav-items"><a href="#">Home</a></li>
+              <li class="nav-items"><a href="#band">Band</a></li>
+              <li class="nav-items"><a href="#tour">Tour</a></li>
+              <li class="nav-items"><a href="#contact">Contact</a></li>
+              <li class="nav-items">
                 <a href="#more">
                   Move
                   <i class="fas fa-caret-down"></i>
-                  <ul class="sub-nav">
+                  <ul class="subnav">
                     <li><a href="#more">Merchandise</a></li>
                     <li><a href="#more">Extra</a></li>
                     <li><a href="#more">Media</a></li>
                   </ul>
+                  <ul class="test"></ul>
                 </a>
               </li>
             </ul>
             <div class="search-btn">
               <i class="search-icon fab fa-sistrix"></i>
+            </div>
+            <div class="menu-mobile-btn">
+              <i class="menu-mobile-icon fas fa-bars"></i>
             </div>
           </div>
           <div class="slider">
@@ -181,33 +185,50 @@
                     </div>
                     <div class="phone">
                       <i class="fas fa-phone"
-                        ><span class="contact-text">Phone: +00 151515</span></i
+                        ><span class="contact-text"
+                          >Phone:
+                          <a type="phone" href="+00 151515">+00 151515</a></span
+                        ></i
                       >
                     </div>
                     <div class="email">
                       <i class="fas fa-envelope"
                         ><span class="contact-text"
-                          >Email: mail@mail.com</span
+                          >Email:
+                          <a type="Email" href="mail@mail.com"
+                            >mail@mail.com</a
+                          ></span
                         ></i
                       >
                     </div>
                   </div>
-                  <div class="contact-form">
+                  <form class="contact-form">
                     <div class="contact-fill">
                       <input
                         type="text"
                         placeholder="Name"
                         class="contact-input"
+                        required
                       />
                       <input
                         type="email"
                         placeholder="Email"
                         class="contact-input"
+                        required
                       />
                     </div>
-                    <input placeholder="Message" class="contact-input" />
-                    <a href="#" class="contact-submit">Send</a>
-                  </div>
+                    <input
+                      placeholder="Message"
+                      class="contact-input"
+                      required
+                    />
+                    <input
+                      href="#more"
+                      type="submit"
+                      class="contact-submit"
+                      value="Send"
+                    />
+                  </form>
                 </div>
               </div>
             </div>
@@ -215,26 +236,28 @@
               <img class="footer-img" src="img/map/map.jpg" alt="" />
               <div class="footer-content">
                 <div class="footer-social">
-                  <a href="#" class="social-icon"
+                  <a href="#more" class="social-icon"
                     ><i class="fab fa-facebook-f"></i
                   ></a>
-                  <a href="#" class="social-icon"
+                  <a href="#more" class="social-icon"
                     ><i class="fab fa-instagram"></i
                   ></a>
-                  <a href="#" class="social-icon"
+                  <a href="#more" class="social-icon"
                     ><i class="fab fa-snapchat"></i
                   ></a>
-                  <a href="#" class="social-icon"
+                  <a href="#more" class="social-icon"
                     ><i class="fab fa-pinterest"></i
                   ></a>
-                  <a href="#" class="social-icon"
+                  <a href="#more" class="social-icon"
                     ><i class="fab fa-twitter"></i
                   ></a>
-                  <a href="#" class="social-icon"
+                  <a href="#more" class="social-icon"
                     ><i class="fab fa-linkedin"></i
                   ></a>
                 </div>
-                <p class="">Powered by <a href="fb.com/kira3000je">Ductt</a></p>
+                <p class="">
+                  Powered by <a href="https://fb.com/kira3000je">Ductt</a>
+                </p>
               </div>
             </div>
           </div>
@@ -266,6 +289,47 @@
     var modal = document.querySelector(".modal");
     var btn = document.querySelectorAll(".ticket-btn");
     var span = document.querySelector(".close");
+    var header = document.querySelector(".header");
+    var mobileBtn = document.querySelector(".menu-mobile-btn");
+    var headerHeight = header.clientHeight;
+    var navItems = document.querySelectorAll(".nav-items");
+    var main = document.querySelectorAll(":not(.nav)");
+
+    // đóng menu khi click vào nav-item
+    for (let i = 0; i < navItems.length; i++) {
+      navItems[i].onclick = function () {
+        var isParent =
+          this.nextElementSibling &&
+          this.nextElementSibling.classList.contains("nav-items");
+        console.log(isParent);
+        if (isParent) {
+          header.style.height = "46px";
+        } else {
+          header.style.height = "auto";
+        }
+      };
+    }
+    // đóng mở menu
+    mobileBtn.onclick = function () {
+      var isClose = header.clientHeight === headerHeight;
+      if (isClose) {
+        header.style.height = "auto";
+      } else {
+        header.style.height = "46px";
+      }
+    };
+    // đóng menu khi click vào các phần tử khác
+    const nav = document.getElementsByClassName(".nav");
+    document.addEventListener("click", function (event) {
+      var isClickInside = event.target.closest(".nav");
+      var isClickbtn = event.target.closest(".menu-mobile-btn");
+      var isClose = header.clientHeight === headerHeight;
+      if (!isClickInside && !isClose && !isClickbtn) {
+        header.style.height = "46px";
+      }
+    });
+
+    // modal
     for (let i = 0; i < btn.length; i++) {
       btn[i].onclick = function () {
         modal.style.display = "flex";
